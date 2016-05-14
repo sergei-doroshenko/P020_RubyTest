@@ -20,7 +20,16 @@ class ArrayUtil
       index += 1
     end
   end
-
+	
+	def reject
+	kept_items = []
+	@data.each do |item|
+		unless yield(item)
+			kept_items << item
+		end
+	end
+end
+	
 end
 
 a = ArrayUtil.new(["a", "b", "c"])
