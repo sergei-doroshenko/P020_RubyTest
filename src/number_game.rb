@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 #Get My Number Game
 #Written by Sergei
 
@@ -12,18 +14,19 @@ name = input.chomp
 puts "Welcome, #{name}!"
 
 # Store a random number for the player to guess.
-puts "I've got a random number between 1 and 100."
+puts "I've got a random number between 1 and 100 inclusive."
 puts "Can you guess it?"
 target = rand(100) + 1
 
+allowed_tries = 10
 num_guesses = 0
 
 # Track whether the player has guessed correctly.
 guessed_it = false
 
-#while num_guesses < 10 && guessed_it == false
-until num_guesses == 10 || guessed_it
-	remaining_guesses = 10 - num_guesses
+#while num_guesses < allowed_tries && guessed_it == false
+until num_guesses == allowed_tries || guessed_it
+	remaining_guesses = allowed_tries - num_guesses
 	#puts remaining_guesses.to_s + " guesses left."
 	puts "You've got #{remaining_guesses} guesses left..."
 	print "Make a guess: "
@@ -35,7 +38,7 @@ until num_guesses == 10 || guessed_it
 	elsif guess > target
 		puts "Ooops. Your guess was HIGH."
 	else guess == target
-		puts "Good job, #{name}!"
+		puts "Good job, #{name}! The number is #{target}!"
 		puts "You guess my number in #{num_guesses} guesses!"
 		guessed_it = true
 	end

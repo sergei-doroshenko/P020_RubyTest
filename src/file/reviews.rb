@@ -7,7 +7,12 @@ end
 
 lines = []                                   # We need to create this variable outside the block.
 
-File.open("reviews.txt") do |review_file|    # Open the file, and automatically close it when we're done.
+# Get parent directory of currently executed file
+parent_dir = File.expand_path("..", File.dirname(__dir__))
+print "The parent dir: #{parent_dir}\n"
+print "or #{File.expand_path(Dir.pwd)}"
+
+File.open("#{parent_dir}/data/reviews.txt") do |review_file|    # Open the file, and automatically close it when we're done.
 	lines = review_file.readlines            # Read every line in the file into an array.
 end
 

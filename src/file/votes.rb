@@ -1,5 +1,5 @@
 lines = []
-File.open("votes.txt") do |file|
+File.open("#{File.expand_path(Dir.pwd)}/data/votes.txt") do |file|
 	lines = file.readlines
 end
 
