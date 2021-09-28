@@ -45,6 +45,16 @@ It was the worst of times.
     assert_equal "\n", long_string[0,1]
   end
 
+  def test_percent_stings
+    # https://stackoverflow.com/questions/1274675/what-does-warray-mean
+    # words array
+    assert_equal %w(one two three), ["one", "two", "three"]
+
+    # shell command
+    command_output = %x(pwd)
+    assert_match /src\/koans/, command_output
+  end
+
   def test_here_documents_can_also_handle_multiple_lines
     long_string = <<EOS
 It was the best of times,

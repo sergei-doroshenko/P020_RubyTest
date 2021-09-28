@@ -85,4 +85,6 @@ class AboutArrays < Neo::Koan
     assert_equal [1,2], array
   end
 
+  # TODO add: empty?, include?
+
 end
