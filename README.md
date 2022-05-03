@@ -27,3 +27,6 @@ ruby-debug-ide (0.7.2)
 1. Ruby Soligraph
 2. endwise
 3. Prettier
+
+### To run ruby koan
+➜  koans git:(master) ✗ ruby about_arrays.rb

@@ -87,4 +87,15 @@ class AboutArrays < Neo::Koan
 
   # TODO add: empty?, include?
 
+  def test_mapping_arrays
+    origin = ["one", "two", "three"]
+
+    sizes = origin.map do | number_str |
+      number_str.size.to_s
+    end
+
+    # puts sizes.to_s
+    print(sizes)
+  end
+
 end
